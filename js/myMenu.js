@@ -10,33 +10,48 @@
         var dataPath;
         var dataHeight;
         function changeData(type, path){
-                var data=document.getElementById('objectData');
-                if(path===null && type===null){
+            var content=document.getElementById('content')
+            if(path===null && type===null){
+
+            }
+            else if(type==='pdf')
+            {
+                content.appendChild(elem)
+            }
+
+
+            var data=document.getElementById('objectData');
+            var iframe=document.getElementById('iframeData');
+            if(path===null && type===null){
                 data.setAttribute('data', null);
                 data.setAttribute('width',0);
                 data.setAttribute('height',0);
                 dataPath=null;
             }else {
+                if(type==='html'){
+                    iframeData
+
+                }
                 dataHeight=$(window).height()-68;
                 dataPath=path;
                 data.setAttribute('data', path);
                 data.setAttribute('width','100%');
                 data.setAttribute('height',dataHeight);
 
-            if(type==='pdf'){
-                data.setAttribute('type', 'application/pdf');
-            }
-            else if(type==='flash'){
-                data.setAttribute('type', 'application/x-shockwave-flash');
-                data.param('move').value=path;
-                data.param('allowScriptAccess').value='sameDomain';
-                data.param('quality').value='high';
-                data.param('allowFullScreen').value=true;
-            }
-            else if(type==='html'){
+                if(type==='pdf'){
+                    data.setAttribute('type', 'application/pdf');
+                }
+                else if(type==='flash'){
+                    data.setAttribute('type', 'application/x-shockwave-flash');
+                    data.param('move').value=path;
+                    data.param('allowScriptAccess').value='sameDomain';
+                    data.param('quality').value='high';
+                    data.param('allowFullScreen').value=true;
+                }
+                else if(type==='html'){
 
+                }
             }
-        }
         }
         window.onresize = function(event) {
             dataHeight=$(window).height()-68;

@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="./css/themes/start/jquery-ui.min.css">
     <link rel="stylesheet" type="text/css" href="./css/themes/start/jquery.ui.theme.css">
     <link rel="stylesheet" type="text/css" href="./css/myMenu.css">
-    <script type="text/javascript" src="./js/jquery-2.0.3.min.js"></script>
+    <script type="text/javascript" src="./js/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="./js/jquery-ui.js"></script>
     <script type="text/javascript" src="./js/myMenu.js"></script>
     <script type="text/javascript" src="./js/resizeContent.js"></script>
@@ -22,9 +22,11 @@
                 <h3>Рабочая программа</h3>
                 <div>
                     <ul class="menu">
+
                         <li><button type="button" class="button" onclick="changeData('pdf','./resources/pdf/readme.pdf');">Пояснительная записка</button></li>
                         <li><button type="button" class="button" onclick="changeData('pdf','./resources/pdf/plan.pdf');">Тематическое планирование</button></li>
                         <li><button type="button" class="button" onclick="changeData('pdf','./resources/pdf/lit.pdf');">Литература</button></li>
+
                     </ui>
                 </div>
         
@@ -55,6 +57,7 @@
                 <h3>Презентация</h3>
                 <ul class="menu">
                     <li><button type="button" class="button" onclick="changeData('flash','./resources/swf/presentation.swf');"><p>Презентация</p></button></li>
+                    <li><button type="button" class="button" onclick="changeData('flash','./resources/swf/presentation.swf');"><p>Презентация html</p></button></li>
                 </ul>
                        
                 <h3>Сборник задач</h3>
@@ -64,11 +67,15 @@
                     </ul>
             </div>
         </div>
-    <div id="content">
-        <object id="objectData">
-            <param name="allowFullScreen" value="true" />
-        </object>
-            
+        <div id="content">
+            <!--
+            <object id="objectData">
+                <param name="allowFullScreen" value="true" />
+            </object>
+            -->
+            <iframe id="objectData" src="./resources/presentations/p1/index.html">Ваш браузер не поддерживает плавающие фреймы!</iframe>
+            <!--<iframe src=http://docs.google.com/gview?url=http://www.africau.edu/images/default/sample.pdf&embedded=true" frameborder="0"/>-->
+            <!--<iframe src=http://docs.google.com/gview?url=./resources/pdf/sloves.pdf&embedded=true" frameborder="0"/>-->
         </div>
     </div>
 </body>

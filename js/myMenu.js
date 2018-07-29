@@ -1,3 +1,4 @@
+//                data.setAttribute('src', "http://docs.google.com/gview?url=http://www.africau.edu/images/default/sample.pdf&embedded=true");
         $(function() {$( ".accordion" ).accordion({
             activeIndex: false,
             collapsible: true,
@@ -17,19 +18,23 @@
                 dataPath=null;
             }else {
                 dataHeight=$(window).height()-68;
-                dataPath=path;    
+                dataPath=path;
                 data.setAttribute('data', path);
                 data.setAttribute('width','100%');
                 data.setAttribute('height',dataHeight);
-        
+
             if(type==='pdf'){
                 data.setAttribute('type', 'application/pdf');
-                }else if(type==='flash'){
+            }
+            else if(type==='flash'){
                 data.setAttribute('type', 'application/x-shockwave-flash');
                 data.param('move').value=path;
                 data.param('allowScriptAccess').value='sameDomain';
                 data.param('quality').value='high';
                 data.param('allowFullScreen').value=true;
+            }
+            else if(type==='html'){
+
             }
         }
         }

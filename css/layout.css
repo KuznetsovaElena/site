@@ -1,36 +1,45 @@
-#data{
-    min-width: 800px;
-    /*min-height: 600px;*/
+html, body{
+    height: 100%;
     margin: 0;
-    padding: 0;
 }
 
-#left{
+div#wrapper{
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+div#header{
+    flex: 0 0 auto;
+    margin: 10px 10px 10px 10px;
+    height: 60px;
+    background: red;
+    
+}
+
+div#main{
+    flex: 1 0 auto;
+    margin: 0px 10px 0px 10px;
+    background: blue;
+}
+
+div#footer{
+    flex: 0 0 auto;
+    margin: 10px 10px 10px 10px;
+    height: 20px;
+    background: green;
+}
+
+#menu{
     position: relative;
     float: left;
     margin: 0px;
     min-width: 240px;
-    width: 30%;
+    width: 240px;
+    max-width: 240px;
 }
 
-#content{
-    position: relative;
-    float: inherit;
-    margin-left: 31%;
-    width: 69%;
-}
-
-#top{
-    width: 100%;
-    height: 30px;
-}
-
-.accordion {height: 100%;}
-.button {width: 100%; text-align: center;}
-ul.menu { list-style-type: none; margin: 0; padding: 0;}
-ul.menu li { margin: 2px; padding: 0.2em;}
-/*
-ul.menu li { margin: 2px; padding: 0.2em; font-size: small;}
-div.accordion h3 {font-size: medium;}
-*/
-.object {list-style-type: none; padding: 0; margin: 0;}
+/*Menu*/
+div.accordion_menu_item ul {list-style-type: none; margin: 0; padding: 0;}
+div.accordion_menu_item ul li { padding-top: 2px; padding-bottom: 2px;}

@@ -1,76 +1,57 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
-    "http://www.w3.org/TR/html4/strict.dtd">
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
 <html>
-<head>
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-    <link rel="stylesheet" type="text/css" href="./css/layout.css">
-    <link rel="stylesheet" type="text/css" href="./css/themes/start/jquery-ui.min.css">
-    <link rel="stylesheet" type="text/css" href="./css/themes/start/jquery.ui.theme.css">
-    <link rel="stylesheet" type="text/css" href="./css/myMenu.css">
-    <script type="text/javascript" src="./js/jquery-3.3.1.min.js"></script>
-    <script type="text/javascript" src="./js/jquery-ui.js"></script>
-    <script type="text/javascript" src="./js/myMenu.js"></script>
-    <script type="text/javascript" src="./js/resizeContent.js"></script>
-</head>
-<body class="ui-widget-content">
-    <div id="top" class="top">
-        Вневписанная окружность
-    </div>
-    <div id="data">
-        <div id="left">
-            <div class="accordion">
-                <h3>Рабочая программа</h3>
-                <div>
-                    <ul class="menu">
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="jquery-ui.css">
+        <link rel="stylesheet" href="css/layout.css">
+        <script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+        <script type="text/javascript" src="jquery-ui.js"></script>
+        <script type="text/javascript" src="js/functional.js"></script>
+    </head>
+    <body class="ui-widget">
+        <div id="wrapper">
+            <div id="header">
+                Header
+            </div>
+            <div id="main">
+                <div id="menu">
+                    <!--Left Menu-->
+                    <div id="accordion">
+                        <h3>Портфолио</h3>
+                        <div class="accordion_menu_item">
+                            <ul>
+                                <li><button type="button" class="button" onclick="changeData('html','https://learn.javascript.ru/operators');"><p>Решения</p></button></li>
+                                <li><button type="button" class="button" onclick="changeData('pdf','http://www.africau.edu/images/default/sample.pdf');"><p>Решения</p></button></li>
+                                <li><button type="button" class="button" onclick="changeData('html','file:///home/ilya/Development/KuznetsovaElenaSite/resources/presentations/p1/index.html');"><p>Решения</p></button></li>
+                            </ul>
+                        </div>
+                        <h3>Section 1</h3>
+                        <div>
+                            <button class="ui-button">A button element3</button>
 
-                        <li><button type="button" class="button" onclick="changeData('pdf','./resources/pdf/readme.pdf');">Пояснительная записка</button></li>
-                        <li><button type="button" class="button" onclick="changeData('pdf','./resources/pdf/plan.pdf');">Тематическое планирование</button></li>
-                        <li><button type="button" class="button" onclick="changeData('pdf','./resources/pdf/lit.pdf');">Литература</button></li>
 
-                <h3>Злектронное пособие</h3>
-                <div>
-                    <ul class="menu" id="menu">
-                        <p>Теоретическая часть</p>
-                       
-                        <li><button type="button" class="button" onclick="changeData('flash','./resources/swf/withSound/def.swf');"><p>Определение</p></button></li>
-                        <li><button type="button" class="button" onclick="changeData('flash','./resources/swf/withSound/th1.swf');"><p>Теорема о центре</p></button></li>
-                        <li><button type="button" class="button" onclick="changeData('flash','./resources/swf/withSound/th2.swf');"><p>Теорема о касательной</p></button></li>
-                        <li><button type="button" class="button" onclick="changeData('flash','./resources/swf/withSound/th3.swf');"><p>Теорема об отрезке касательной</p></button></li>
-                        <li><button type="button" class="button" onclick="changeData('flash','./resources/swf/withSound/th4.swf');"><p>Теорема о радиусе вневписанной окружности</p></button></li>
-                       
-                        <p>Практическая часть</p>
-                       
-                        <li><button type="button" class="button" onclick="changeData('flash','./resources/swf/withSound/gia1.swf');"><p>Задача 1</p></button></li>
-                       
-                        <li><button type="button" class="button" onclick="changeData('flash','./resources/swf/withSound/gia2.swf');"><p>Задача 2</p></button></li>
-                        <li><button type="button" class="button" onclick="changeData('flash','./resources/swf/withSound/1ege.swf');"><p>Задача 3</p></button></li>
-                       
-                        <li><button type="button" class="button" onclick="changeData('flash','./resources/swf/withSound/3ege.swf');"><p>Задача 4</p></button></li>
-                       
-                        <li><button type="button" class="button" onclick="changeData('flash','./resources/swf/withSound/2ege.swf');"><p>Задача 5</p></button></li>
+                        </div>
+                        <h3>Section 2</h3>
+                        <div>
 
-                <h3>Презентация</h3>
-                <ul class="menu">
-                    <li><button type="button" class="button" onclick="changeData('flash','./resources/swf/presentation.swf');"><p>Презентация</p></button></li>
-                    <li><button type="button" class="button" onclick="changeData('flash','./resources/swf/presentation.swf');"><p>Презентация html</p></button></li>
-                </ul>
-                       
-                <h3>Сборник задач</h3>
-                    <ul class="menu">
-                        <li><button type="button" class="button" onclick="changeData('pdf','./resources/pdf/problems.pdf');"><p>Условия</p></button></li>
-                        <li><button type="button" class="button" onclick="changeData('pdf','./resources/pdf/sloves.pdf');"><p>Решения</p></button></li>
-                    </ul>
+                        </div>
+                    </div>
+                </div>
+                <div id="content">
+                    <iframe width="560" height="315" src="//www.youtube.com/embed/C8kSrkz8Hz8" frameborder="0" allowfullscreen></iframe> 
+                    <iframe width="100%" height="100%" src="file:///home/ilya/Development/KuznetsovaElenaSite/resources/presentations/p1/index.html" frameborder="0" allowfullscreen></iframe> 
+                </div>
+            </div>
+            <div id="footer">
+                asopjcxnxas;jkcn
             </div>
         </div>
-        <div id="content1">
-            <!--
-            <object id="objectData">
-                <param name="allowFullScreen" value="true" />
-            </object>
-            -->
-            <!--<iframe id="iframeData" height="1024" width="768" src="./resources/presentations/p1/index.html">Ваш браузер не поддерживает плавающие фреймы!</iframe>-->
-            <iframe src=http://docs.google.com/gview?url=http://www.africau.edu/images/default/sample.pdf&embedded=true"  width="700" height="820"  frameborder="0"/>
-        </div>
-    </div>
-</body>
+    </body>
 </html>

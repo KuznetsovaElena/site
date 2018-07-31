@@ -1,0 +1,45 @@
+html, body{
+    height: 100%;
+    margin: 0;
+}
+
+div#wrapper{
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+div#header{
+    flex: 0 0 auto;
+    margin: 10px 10px 10px 10px;
+    height: 60px;
+    background: red;
+    
+}
+
+div#main{
+    flex: 1 0 auto;
+    margin: 0px 10px 0px 10px;
+    background: blue;
+}
+
+div#footer{
+    flex: 0 0 auto;
+    margin: 10px 10px 10px 10px;
+    height: 20px;
+    background: green;
+}
+
+#menu{
+    position: relative;
+    float: left;
+    margin: 0px;
+    min-width: 240px;
+    width: 240px;
+    max-width: 240px;
+}
+
+/*Menu*/
+div.accordion_menu_item ul {list-style-type: none; margin: 0; padding: 0;}
+div.accordion_menu_item ul li { padding-top: 2px; padding-bottom: 2px;}

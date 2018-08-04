@@ -57,7 +57,7 @@ function changeData(type, path){
             elem.setAttribute('height',elemHeight);
             contentData.appendChild(elem);
         }
-        else if(type==='flash')
+        else if(type==='swf')
         {
             elem=document.createElement('object');
             elem.setAttribute('class', 'ui-widget-shadow');

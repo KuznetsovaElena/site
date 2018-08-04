@@ -32,6 +32,11 @@ function changeData(type, path){
         var elemHeight = $(window).height()-130;
         if(type==='gviewer')
         {
+            if ('.' === path.substring(0,1)){
+                var URL = location.protocol+'//'+location.hostname+(location.port ? ':'+location.port: '');
+                path=URL+path.substring(1);
+            }
+            
             elem=document.createElement('iframe');
             elem.setAttribute('src',"https://docs.google.com/viewer?url="+path+"&embedded=true");
             elem.setAttribute('width','100%');

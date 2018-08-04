@@ -18,6 +18,7 @@ $( function() {$( ".accordion" ).accordion({
 });
 
 var elem=null;
+elemHeightOffset=90
 function changeData(type, path){
     var contentData = document.getElementById("content");
     if(elem!==null)
@@ -29,8 +30,7 @@ function changeData(type, path){
 
     }
     else{
-//        var elemHeight = $(window).height()-130;
-        var elemHeight = $(window).height()-90;
+        var elemHeight = $(window).height()-elemHeightOffset;
         if(type === 'gviewer')
         {
             
@@ -75,7 +75,7 @@ function changeData(type, path){
 window.onresize = function(event) {
     if(elem!==null)
     {
-        var elemHeight = $(window).height()-130;
+        var elemHeight = $(window).height()-elemHeightOffset;
         elem.setAttribute('height',elemHeight);
     }
 };

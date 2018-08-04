@@ -12,6 +12,9 @@ $( function() {$( ".accordion" ).accordion({
 });
 
 var elem=null;
+function elemHeight(){
+    return $(window).height()-90;
+}
 function changeData(type, path){
     var contentData = document.getElementById("content");
     if(elem!==null)
@@ -23,8 +26,6 @@ function changeData(type, path){
 
     }
     else{
-//        var elemHeight = $(window).height()-130;
-        var elemHeight = $(window).height()-90;
         if(type === 'gviewer')
         {
             
@@ -39,7 +40,7 @@ function changeData(type, path){
             elem.setAttribute('width','100%');
             elem.setAttribute('frameBorder','0');
             elem.setAttribute('class', 'ui-widget-shadow');
-            elem.setAttribute('height',elemHeight);
+            elem.setAttribute('height',elemHeight());
             contentData.appendChild(elem);
         }
         else if(type==='iframe')
@@ -49,7 +50,7 @@ function changeData(type, path){
             elem.setAttribute('width','100%');
             elem.setAttribute('frameBorder','0');
             elem.setAttribute('class', 'ui-widget-shadow');
-            elem.setAttribute('height',elemHeight);
+            elem.setAttribute('height',elemHeight());
             contentData.appendChild(elem);
         }
         else if(type==='swf')
@@ -60,16 +61,15 @@ function changeData(type, path){
             elem.setAttribute('width','100%');
             elem.setAttribute('frameBorder','0');
             elem.setAttribute('class', 'ui-widget-shadow');
-            elem.setAttribute('height',elemHeight);
+            elem.setAttribute('height',elemHeight());
             contentData.appendChild(elem);
         }
     }
 };
 
 window.onresize = function(event) {
-    if(elem!==null)
+    if(elem!=null)
     {
-        var elemHeight = $(window).height()-90;
-        elem.setAttribute('height',elemHeight);
+        elem.setAttribute('height',elemHeight());
     }
 };

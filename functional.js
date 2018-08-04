@@ -1,9 +1,3 @@
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 $( function() {$( ".tabs" ).tabs({
     collapsible: true,
     heightStyle: "fill"
@@ -18,7 +12,6 @@ $( function() {$( ".accordion" ).accordion({
 });
 
 var elem=null;
-elemHeightOffset=90;
 function changeData(type, path){
     var contentData = document.getElementById("content");
     if(elem!==null)
@@ -30,6 +23,7 @@ function changeData(type, path){
 
     }
     else{
+//        var elemHeight = $(window).height()-130;
         var elemHeight = $(window).height()-90;
         if(type === 'gviewer')
         {

@@ -59,13 +59,14 @@ function changeData(type, path){
         }
         else if(type==='swf')
         {
-            elem=document.createElement('object');
+            elem=document.createElement('embed');
+            elem.setAttribute('pluginspage','http://www.macromedia.com/go/getflashplayer');
+            elem.setAttribute('src',path);
+            elem.setAttribute('width','100%');
+            elem.setAttribute('frameBorder','0');
             elem.setAttribute('class', 'ui-widget-shadow');
-            elem.setAttribute('type', 'application/x-shockwave-flash');
-            elem.param('move').value=path;
-            elem.param('allowScriptAccess').value='sameDomain';
-            elem.param('quality').value='high';
-            elem.param('allowFullScreen').value=true;
+            elem.setAttribute('height',elemHeight);
+            contentData.appendChild(elem);
         }
     }
 };

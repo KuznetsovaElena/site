@@ -18,7 +18,9 @@ $( function() {$( ".accordion" ).accordion({
 });
 
 var elem=null;
-elemHeightOffset=90
+function elemHeight(){
+    return $(window).height()-90;
+};
 function changeData(type, path){
     var contentData = document.getElementById("content");
     if(elem!==null)
@@ -45,7 +47,7 @@ function changeData(type, path){
             elem.setAttribute('width','100%');
             elem.setAttribute('frameBorder','0');
             elem.setAttribute('class', 'ui-widget-shadow');
-            elem.setAttribute('height',elemHeight);
+            elem.setAttribute('height',elemHeight());
             contentData.appendChild(elem);
         }
         else if(type==='iframe')
@@ -55,7 +57,7 @@ function changeData(type, path){
             elem.setAttribute('width','100%');
             elem.setAttribute('frameBorder','0');
             elem.setAttribute('class', 'ui-widget-shadow');
-            elem.setAttribute('height',elemHeight);
+            elem.setAttribute('height',elemHeight());
             contentData.appendChild(elem);
         }
         else if(type==='swf')
@@ -66,7 +68,7 @@ function changeData(type, path){
             elem.setAttribute('width','100%');
             elem.setAttribute('frameBorder','0');
             elem.setAttribute('class', 'ui-widget-shadow');
-            elem.setAttribute('height',elemHeight);
+            elem.setAttribute('height',elemHeight());
             contentData.appendChild(elem);
         }
     }
@@ -75,7 +77,6 @@ function changeData(type, path){
 window.onresize = function(event) {
     if(elem!==null)
     {
-        var elemHeight = $(window).height()-elemHeightOffset;
-        elem.setAttribute('height',elemHeight);
+        elem.setAttribute('height',elemHeight());
     }
 };

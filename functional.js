@@ -29,7 +29,8 @@ function changeData(type, path){
 
     }
     else{
-        var elemHeight = $(window).height()-130;
+//        var elemHeight = $(window).height()-130;
+        var elemHeight = $(window).height()-90;
         if(type === 'gviewer')
         {
             

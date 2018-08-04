@@ -2,7 +2,7 @@ html, body{
     height: 100%;
     margin: 0;
     min-width: 480px;
-    min-height: 800px;
+    /*min-height: 800px;*/
 }
 
 div#wrapper{
@@ -13,28 +13,28 @@ div#wrapper{
 }
 
 div#header{
-    flex: 0 0 auto;
+    flex: 0 1 auto;
     margin: 10px 10px 10px 10px;
     height: 60px;
     background: gray;
 }
 
 div#main{
-    flex: 1 0 auto;
+    flex: 1 1 auto;
     display: flex;
     flex-direction: row;
     margin: 0px 10px 0px 10px;
 }
 
 div#footer{
-    flex: 0 0 auto;
+    flex: 0 1 auto;
     margin: 10px 10px 10px 10px;
     height: 20px;
     background: gray;
 }
 
 #menu{
-    flex: 0 0 auto;
+    flex: 0 1 auto;
     min-width: 240px;
     width: 240px;
     max-width: 240px;
@@ -42,7 +42,7 @@ div#footer{
 }
 
 #content{
-    flex: 1 0 auto;
+    flex: 1 1 auto;
     margin: 4px 0px 0px 0px;
 }
 

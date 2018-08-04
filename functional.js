@@ -30,7 +30,7 @@ function changeData(type, path){
 
     }
     else{
-        var elemHeight = $(window).height()-elemHeightOffset;
+        var elemHeight = $(window).height()-90;
         if(type === 'gviewer')
         {
             
@@ -75,7 +75,7 @@ function changeData(type, path){
 window.onresize = function(event) {
     if(elem!==null)
     {
-        var elemHeight = $(window).height()-elemHeightOffset;
+        var elemHeight = $(window).height()-90;
         elem.setAttribute('height',elemHeight);
     }
 };

@@ -18,10 +18,7 @@ $( function() {$( ".accordion" ).accordion({
 });
 
 var elem=null;
-//dataHeight=$(window).height()-90;
-
 function changeData(type, path){
-//    var contentData = document.getElementById("contentData");
     var contentData = document.getElementById("content");
     if(elem!==null)
     {
@@ -31,45 +28,45 @@ function changeData(type, path){
     if(path===null && type===null){
 
     }
-    else if(type==='pdf')
-    {
-        elem=document.createElement('iframe');
-        elem.setAttribute('src',"https://docs.google.com/viewer?url="+path+"&embedded=true");
-        elem.setAttribute('width','100%');
-        elem.setAttribute('frameBorder','0');
-        elem.setAttribute('class', 'ui-widget-shadow');
-//        elem.setAttribute('height',dataHeight);
-        contentData.appendChild(elem);
-    }
-    else if(type==='html')
-    {
-        elem=document.createElement('iframe');
-        elem.setAttribute('src',path);
-        elem.setAttribute('width','100%');
-        elem.setAttribute('frameBorder','0');
-        elem.setAttribute('class', 'ui-widget-shadow');
-//        elem.setAttribute('height',dataHeight);
-        contentData.appendChild(elem);
-    }
-    else if(type==='flash')
-    {
-        elem=document.createElement('object');
-        elem.setAttribute('class', 'ui-widget-shadow');
-        elem.setAttribute('type', 'application/x-shockwave-flash');
-        elem.param('move').value=path;
-        elem.param('allowScriptAccess').value='sameDomain';
-        elem.param('quality').value='high';
-        elem.param('allowFullScreen').value=true;
+    else{
+        var elemHeight = $(window).height()-130;
+        if(type==='gviewer')
+        {
+            elem=document.createElement('iframe');
+            elem.setAttribute('src',"https://docs.google.com/viewer?url="+path+"&embedded=true");
+            elem.setAttribute('width','100%');
+            elem.setAttribute('frameBorder','0');
+            elem.setAttribute('class', 'ui-widget-shadow');
+            elem.setAttribute('height',elemHeight);
+            contentData.appendChild(elem);
+        }
+        else if(type==='iframe')
+        {
+            elem=document.createElement('iframe');
+            elem.setAttribute('src',path);
+            elem.setAttribute('width','100%');
+            elem.setAttribute('frameBorder','0');
+            elem.setAttribute('class', 'ui-widget-shadow');
+            elem.setAttribute('height',elemHeight);
+            contentData.appendChild(elem);
+        }
+        else if(type==='flash')
+        {
+            elem=document.createElement('object');
+            elem.setAttribute('class', 'ui-widget-shadow');
+            elem.setAttribute('type', 'application/x-shockwave-flash');
+            elem.param('move').value=path;
+            elem.param('allowScriptAccess').value='sameDomain';
+            elem.param('quality').value='high';
+            elem.param('allowFullScreen').value=true;
+        }
     }
 };
 
 window.onresize = function(event) {
-    var header = document.getElementById("header");
-    var footer = document.getElementById("footer");
-    
-    dataHeight=$(window).height()-68;
-    if(dataPath!==null){
-        var data=document.getElementById('objectData');
-        data.setAttribute('height',dataHeight);
+    if(elem!==null)
+    {
+        var elemHeight = $(window).height()-130;
+        elem.setAttribute('height',elemHeight);
     }
 };

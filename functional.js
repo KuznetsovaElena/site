@@ -30,11 +30,13 @@ function changeData(type, path){
     }
     else{
         var elemHeight = $(window).height()-130;
-        if(type==='gviewer')
+        if(type === 'gviewer')
         {
+            
             if ('.' === path.substring(0,1)){
-                var URL = location.protocol+'//'+location.hostname+(location.port ? ':'+location.port: '');
-                path=URL+path.substring(1);
+                var href = window.location.href;
+                var dir = href.substring(0, href.lastIndexOf('/'));
+                path=dir+path.substring(1);
             }
             
             elem=document.createElement('iframe');

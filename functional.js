@@ -43,7 +43,7 @@ function changeData(type, path){
             elem.setAttribute('width',elemWidth());
             elem.setAttribute('frameBorder','0');
             elem.setAttribute('class', 'ui-widget-shadow');
-            elem.setAttribute('height',elemHeight());
+            //elem.setAttribute('height',elemHeight());
             contentData.appendChild(elem);
         }
         else if(type==='iframe')

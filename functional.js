@@ -13,7 +13,7 @@ $( function() {$( ".accordion" ).accordion({
 
 var elem=null;
 function elemHeight(){
-    return $(window).height()-90;
+    return $(window).height()-$('#header').outerHeight(true)
 }
 function changeData(type, path){
     var contentData = document.getElementById("content");

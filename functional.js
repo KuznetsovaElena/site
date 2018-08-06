@@ -37,7 +37,7 @@ function changeData(type, path){
             
             elem=document.createElement('iframe');
             elem.setAttribute('src',"https://docs.google.com/viewer?url="+path+"&embedded=true");
-            elem.setAttribute('width','100%');
+            //elem.setAttribute('width','100%');
             elem.setAttribute('frameBorder','0');
             elem.setAttribute('class', 'ui-widget-shadow');
             elem.setAttribute('height',elemHeight());
@@ -47,7 +47,7 @@ function changeData(type, path){
         {
             elem=document.createElement('iframe');
             elem.setAttribute('src',path);
-            elem.setAttribute('width','100%');
+            //elem.setAttribute('width','100%');
             elem.setAttribute('frameBorder','0');
             elem.setAttribute('class', 'ui-widget-shadow');
             elem.setAttribute('height',elemHeight());

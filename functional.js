@@ -65,3 +65,10 @@ function changeData(type, path){
         }
     }
 };
+
+jQuery( window ).on( "orientationchange", function( event ) {
+    if(elem!==null)
+    {
+        document.getElementById("content").reload();
+    }
+});

@@ -12,12 +12,6 @@ $( function() {$( ".accordion" ).accordion({
 });
 
 var elem=null;
-function elemHeight(){
-    return $(window).height()-$('#header').outerHeight(true)
-}
-function elemWidth(){
-    return $(window).width()-$('#menu').outerHeight(true)
-}
 function changeData(type, path){
     var contentData = document.getElementById("content");
     if(elem!==null)
@@ -43,7 +37,7 @@ function changeData(type, path){
             elem.setAttribute('width','100%');
             elem.setAttribute('frameBorder','0');
             elem.setAttribute('class', 'ui-widget-shadow');
-            elem.setAttribute('height',elemHeight());
+            elem.setAttribute('height','100%');
             contentData.appendChild(elem);
         }
         else if(type==='iframe')
@@ -53,8 +47,10 @@ function changeData(type, path){
             elem.setAttribute('width','100%');
             elem.setAttribute('frameBorder','0');
             elem.setAttribute('class', 'ui-widget-shadow');
-            elem.setAttribute('height',elemHeight());
+            elem.setAttribute('height','100%');
             contentData.appendChild(elem);
+//            elem.height='100%';
+//            elem.contentWindow.document.body.scrollHeight;
         }
         else if(type==='swf')
         {
@@ -64,15 +60,8 @@ function changeData(type, path){
             elem.setAttribute('width','100%');
             elem.setAttribute('frameBorder','0');
             elem.setAttribute('class', 'ui-widget-shadow');
-            elem.setAttribute('height',elemHeight());
+            elem.setAttribute('height','100%');
             contentData.appendChild(elem);
         }
-    }
-};
-
-window.onresize = function(event) {
-    if(elem!=null)
-    {
-        elem.setAttribute('height',elemHeight());
     }
 };

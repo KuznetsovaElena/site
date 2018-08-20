@@ -37,8 +37,10 @@ function changeData(type, path){
             contentData.appendChild(elem);
             elem.setAttribute('class', 'ui-widget-shadow');
             elem.setAttribute('width','100%');
-            elem.setAttribute('height','100%');
-            elem.setAttribute('frameBorder','0');
+            //elem.setAttribute('height','100%');
+            elem.setAttribute(elem.contentWindow.document.body.offsetHeight+'px');
+
+elem.setAttribute('frameBorder','0');
         }
         else if(type==='iframe')
         {

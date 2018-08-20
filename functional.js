@@ -47,8 +47,8 @@ function changeData(type, path){
             elem.setAttribute('src',"https://docs.google.com/viewer?url="+path+"&embedded=true");
             contentData.appendChild(elem);
             elem.setAttribute('class', 'ui-widget-shadow');
-            elem.setAttribute('width','100%');
-            elem.setAttribute('height','100%');
+            elem.setAttribute('width', '100%');
+            elem.setAttribute('height', '100%');
 
             //elem.setAttribute('onload', elemLoaded());
 

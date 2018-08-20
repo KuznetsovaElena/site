@@ -48,7 +48,7 @@ function changeData(type, path){
             contentData.appendChild(elem);
             elem.setAttribute('class', 'ui-widget-shadow');
             elem.setAttribute('width', '100%');
-            elem.setAttribute('onload', 'elem.height=elem.width*298/210);
+            elem.setAttribute('height', '100%');
 
             //elem.setAttribute('onload', elemLoaded());
 

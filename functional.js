@@ -10,7 +10,6 @@ $( function() {$( ".accordion" ).accordion({
     heightStyle: "content"
     });
 });
-
 var elem=null;
 
 function elemResize()
@@ -49,9 +48,12 @@ function changeData(type, path){
             elem.setAttribute('src',"https://docs.google.com/viewer?url="+path+"&embedded=true");
             contentData.appendChild(elem);
             elem.setAttribute('class', 'ui-widget-shadow');
-            elem.setAttribute('width','100%');
-            elem.setAttribute('height','100%');
-            elem.setAttribute('frameBorder','0');
+            elem.setAttribute('width', '100%');
+            elem.setAttribute('height', '100%');
+
+            //elem.setAttribute('onload', elemLoaded());
+
+elem.setAttribute('frameBorder','0');
         }
         else if(type==='iframe')
         {

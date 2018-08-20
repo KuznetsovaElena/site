@@ -50,7 +50,7 @@ function changeData(type, path){
             elem.setAttribute('width','100%');
             elem.setAttribute('height','100%');
 
-            elem.setAttribute('onload', elemLoaded());
+            //elem.setAttribute('onload', elemLoaded());
 
 elem.setAttribute('frameBorder','0');
         }

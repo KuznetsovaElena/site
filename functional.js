@@ -10,8 +10,19 @@ $( function() {$( ".accordion" ).accordion({
     heightStyle: "content"
     });
 });
-
 var elem=null;
+
+  function elemLoaded() {
+
+      if(elem) {
+            // here you can make the height, I delete it first, then I make it again
+            elem.height = "";
+            elem.height = elem.contentWindow.document.body.scrollHeight + "px";
+      }   
+  }
+
+
+
 function changeData(type, path){
     var contentData = document.getElementById("content");
     if(elem!==null)
@@ -38,7 +49,8 @@ function changeData(type, path){
             elem.setAttribute('class', 'ui-widget-shadow');
             elem.setAttribute('width','100%');
             //elem.setAttribute('height','100%');
-            elem.setAttribute(elem.contentWindow.document.body.offsetHeight+'px');
+
+            elem.setAttribute('height', elem.contentWindow.document.body.offsetHeight+'px');
 
 elem.setAttribute('frameBorder','0');
         }

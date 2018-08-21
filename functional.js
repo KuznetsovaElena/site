@@ -72,7 +72,7 @@ function changeData(type, ratio, path){
             elem.setAttribute('width', '100%');
             elem.setAttribute('height', '100%');
 
-            //elem.setAttribute('onload', elemLoaded());
+            elem.setAttribute('onload', elemResize());
 
 elem.setAttribute('frameBorder','0');
         }

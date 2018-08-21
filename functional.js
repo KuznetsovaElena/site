@@ -97,6 +97,7 @@ elem.setAttribute('frameBorder','0');
             elem.setAttribute('width','100%');
             elem.setAttribute('height','100%');
             elem.setAttribute('frameBorder','0');
+            elem.setAttribute('onload', elemResize());
         }
 //        else if(type==='html')
 //        {

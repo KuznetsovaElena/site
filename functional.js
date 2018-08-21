@@ -17,22 +17,24 @@ function elemResize()
 {
     if(elem!==null && elemRatio!==0)
     {
-        var normW=1;
-        var normH=1;
-        var realRatio=$(elem).width()/$(elem).height();
-        if(realRatio<1 && elemRatio>1)
-        {
-           $(elem).height($(elem).width()/elemRatio)
-        }
-        else if(realRatio>1 && elemRatio<1)
-        {
 
-        $(elem).height($(elem).width()/elemRatio);
-            }
-        else
-            {
+
+        var realRatio=$(elem).width()/$(elem).height();
+        if((realRatio<1 && elemRatio>1) || (realRatio>1 && elemRatio<1))
+        {
+            //normalize
+           $(elem).width();
+
+        }
+
+
+
+
+
+
+
         $(elem).height($(elem).width()/elemRatio)
-                }
+
     }
 }
 

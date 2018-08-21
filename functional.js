@@ -17,12 +17,16 @@ function elemResize()
 {
     if(elem!==null && elemRatio!==0)
     {
-        var windowRatio=$(window).width()/$(window).height();
-        if(windowRatio<elemRatio)
+        var realRatio=$(elem).width()/$(elem).height();
+        if(realRatio<elemRatio)
         {
-            
+            $(elem).width($(elem).height()/elemRatio)
         }
+        else
+        {
+
         $(elem).height($(elem).width()*elemRatio);
+        }
     }
 }
 

@@ -20,12 +20,12 @@ function elemResize()
         var realRatio=$(elem).width()/$(elem).height();
         if(realRatio<elemRatio)
         {
-            $(elem).width($(elem).height()/elemRatio)
+            $(elem).width($(elem).height()*elemRatio)
         }
         else
         {
 
-        $(elem).height($(elem).width()*elemRatio);
+        $(elem).height($(elem).width()/elemRatio);
         }
     }
 }

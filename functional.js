@@ -11,19 +11,22 @@ $( function() {$( ".accordion" ).accordion({
     });
 });
 var elem=null;
+elemRatio=0;
 
 function elemResize()
 {
-    if(elem!==null)
+    if(elem!==null && elemRatio!==0)
     {
-        var ratio=$(window).width()/$(window).height();
-  
-        //$(elem).height($(elem).width()*($(window).height()/$(window).width()));
-        $(elem).height($(elem).width());
+        var windowRatio=$(window).width()/$(window).height();
+        if(windowRatio<elemRatio)
+        {
+            
+        }
+        $(elem).height($(elem).width()*elemRatio);
     }
 }
 
-function changeData(type, path){
+function changeData(type, ratio, path){
     var contentData = document.getElementById("content");
     if(elem!==null)
     {
@@ -35,6 +38,12 @@ function changeData(type, path){
 
     }
     else{
+        var ratioW=ratio.substring(0, ratio.lastIndexOf(':'));
+        var ratioH=ratio.substring(ratio.lastIndexOf(':')+1);
+        if(ratioW!==0 && ratioH!==0)
+            elemRatio=ratioW/ratioH;
+        else
+            elemRatio=0;
         if(type === 'gviewer')
         {
             

@@ -1,9 +1,7 @@
 html, body{
     height: 100%;
     margin: 0;
-    min-width: 720px;
     width: 100%;
-    /*min-height: 800px;*/
 }
 
 div#wrapper{
@@ -11,7 +9,6 @@ div#wrapper{
     display: flex;
     flex-direction: column;
     height: 100%;
-    min-width: 700px;
 }
 
 div#header{
@@ -28,7 +25,6 @@ div#main{
     display: flex;
     flex-direction: row;
     margin: 10px 10px 10px 10px;
-/*    height: 100%;*/
 }
 
 #menu{
@@ -42,7 +38,6 @@ div#main{
 #content{
     flex: 1 1 auto;
     margin: 4px 0px 0px 0px;
-    min-width: 450px;
 }
 
 /*Accordion Menu style*/

@@ -3,7 +3,7 @@ elemRatio=0;
 
 function elemResize()
 {
-    if(elemRatio!==0)
+    if(elem!==null && elemRatio!==0)
     {
         var realRatio=($(content).width())/($(content).height());
         if(realRatio>1 && elemRatio<1)

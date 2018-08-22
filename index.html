@@ -12,35 +12,33 @@
     </head>
     <body class="ui-widget">
         <div id="wrapper">
-            <div id="header">
-                Header
+            <div id="header" class="ui-widget-header">
+                <center><h3>Сайт Кузнецовой Елены Васильевны (atomkyz@gmail.com)</h3></center>
             </div>
             <div id="main">
                 <div id="menu">
 <!--                Left Menu-->
+                    <button type="button" class="ui-button" onclick="changeData('iframe','0:0','./content/portfolio/aboutme/index.html');">Портфолио</button>
                     <div class="accordion">
-                        <h3>Портфолио</h3>
-                        <ul>
-                            <li><button type="button" class="ui-button" onclick="changeData('iframe','0:0','./content/portfolio/aboutme/index.html');">О себе</button></li>
-                            <li><button type="button" class="ui-button" onclick="changeData('iframe','0:0','./content/project1/presentation/index.html');">Награды</button></li>
-                            <li><button type="button" class="ui-button" onclick="changeData('iframe','0:0','./content/project1/presentation/index.html');">Интересы</button></li>
-                        </ul>
                         <h3>Учителю</h3>
                         <ul>
-                            <li><button type="button" class="ui-button" onclick="changeData('gviewer', '210:297', './content/project1/pdf/readme.pdf');">Рабочие программы</button></li>
-                            <li><button type="button" class="ui-button" onclick="changeData('gviewer','0:0','./content/project1/pdf/plan.pdf');">Уроки</button></li>
-                            <li><button type="button" class="ui-button" onclick="changeData('gviewer','0:0','./content/project1/pdf/lit.pdf');">Литература</button></li>
-                            <li><button type="button" class="ui-button" onclick="changeData('iframe','210:297','./content/project1/presentation/index.html');">Решения1</button></li>
-                            <li><button type="button" class="ui-button" onclick="changeData('swf','0:0','./presentation.swf');">Решения2</button></li>
+                            <li><div class="accordion">
+                                    <h3>Рабочие программы</h3>
+                                    <ul>
+                                        <li><button type="button" class="ui-button" onclick="changeData('gviewer','0:0','./content/project1/pdf/plan.pdf');">Button1</button></li>
+                                        <li><button type="button" class="ui-button" onclick="changeData('gviewer','0:0','./content/project1/pdf/plan.pdf');">Button2</button></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li><div class="accordion">
+                                    <h3>Уроки</h3>
+                                    <ul>
+                                        <li><button type="button" class="ui-button" onclick="changeData('gviewer','0:0','./content/project1/pdf/plan.pdf');">Button1</button></li>
+                                        <li><button type="button" class="ui-button" onclick="changeData('gviewer','0:0','./content/project1/pdf/plan.pdf');">Button2</button></li>
+                                    </ul>
+                                </div>
+                            </li>
                         </ul>
-                        <h3>Section 1</h3>
-                        <div>
-                            <button class="ui-button">A button element3</button>
-                        </div>
-                        <h3>Достижения</h3>
-                        <div>
-
-                        </div>
                     </div>
                 </div>
                 <div id="content">

@@ -5,7 +5,8 @@ $( function() {$( ".tabs" ).tabs({
 });
 
 $( function() {$( ".accordion" ).accordion({
-    activeIndex: false,
+    active: Number.MAX_SAFE_INTEGER,
+    activeIndex: true,
     collapsible: true,
     heightStyle: "content"
     });

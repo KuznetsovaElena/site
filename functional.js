@@ -1,10 +1,17 @@
 var elem=null;
 elemRatio=0;
+elemWindowResizee=false;
 
 function elemResize()
 {
     if(elem!==null && elemRatio!==0)
     {
+        if(elemWindowResize)
+        {
+            $(elem).height($(elem).width()/elemRatio)
+        }
+        else
+        {
         var tmp=$(content);
         var realRatio=tmp.width()/tmp.height();
         if(realRatio>1 && elemRatio<1)
@@ -15,26 +22,30 @@ function elemResize()
         {
            $(elem).height($(elem).width()/elemRatio);;
         }
+            }
     }
 }
 
-function changeData(type, ratio, path){
+function changeData(type, ratio, windowResize, path){
     var contentData = document.getElementById("content");
     if(elem!==null)
     {
         contentData.removeChild(elem);
         elem=null;
         elemRatio=0;
+        elemWindowResize=false;
     }
     if(path===null && type===null){
 
     }
     else{
+        elemWindowResize=windowResize;
         var ratioW=parseInt(ratio.substring(0, ratio.lastIndexOf(':')));
         var ratioH=parseInt(ratio.substring(ratio.lastIndexOf(':')+1));
         if(ratioW === 0 && ratioH === 0)
         {
             elemRatio=0;
+            elemWindowResize=false;
         }
         else
         {

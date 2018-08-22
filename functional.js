@@ -5,14 +5,15 @@ function elemResize()
 {
     if(elem!==null && elemRatio!==0)
     {
-        var realRatio=($(content).width())/($(content).height());
+        var tmp=$(content);
+        var realRatio=tmp.width()/tmp.height();
         if(realRatio>1 && elemRatio<1)
         {
-           $(elem).width($(elem).height()()*elemRatio);
+           $(elem).width($(elem).height()*elemRatio);
         }
         else
         {
-           $(elem).height($(elem).width()/elemRatio);
+           $(elem).height($(elem).width()/elemRatio);;
         }
     }
 }
@@ -50,6 +51,8 @@ function changeData(type, ratio, path){
             elem.setAttribute('src',"https://docs.google.com/viewer?url="+path+"&embedded=true");
             contentData.appendChild(elem);
             elem.setAttribute('class', 'ui-widget-shadow element');
+            elem.setAttribute('width', '100%');
+            elem.setAttribute('height', '100%');
             elem.setAttribute('onload', elemResize());
         }
         else if(type==='iframe')
@@ -58,6 +61,8 @@ function changeData(type, ratio, path){
             elem.setAttribute('src',path);
             contentData.appendChild(elem);
             elem.setAttribute('class', 'ui-widget-shadow element');
+            elem.setAttribute('width', '100%');
+            elem.setAttribute('height', '100%');
             elem.setAttribute('onload', elemResize());
         }
         else if(type==='swf')
@@ -67,6 +72,8 @@ function changeData(type, ratio, path){
             elem.setAttribute('src',path);
             contentData.appendChild(elem);
             elem.setAttribute('class', 'ui-widget-shadow element');
+            elem.setAttribute('width', '100%');
+            elem.setAttribute('height', '100%');
             elem.setAttribute('onload', elemResize());
         }
     }

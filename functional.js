@@ -1,17 +1,3 @@
-//$( function() {$( ".tabs" ).tabs({
-//    collapsible: true,
-//    heightStyle: "fill"
-//    });
-//});
-//
-//$( function() {$( ".accordion" ).accordion({
-//    active: Number.MAX_SAFE_INTEGER,
-//    activeIndex: true,
-//    collapsible: true,
-//    heightStyle: "content"
-//    });
-//});
-
 var elem=null;
 elemRatio=0;
 
@@ -19,7 +5,6 @@ function elemResize()
 {
     if(elemRatio!==0)
     {
-//        var realRatio=($(window).width()-264)/($(window).height()-70);
         var realRatio=($(content).width())/($(content).height());
         if(realRatio>1 && elemRatio<1)
         {
@@ -64,10 +49,7 @@ function changeData(type, ratio, path){
             elem=document.createElement('iframe');
             elem.setAttribute('src',"https://docs.google.com/viewer?url="+path+"&embedded=true");
             contentData.appendChild(elem);
-            elem.setAttribute('class', 'ui-widget-shadow');
-            elem.setAttribute('width', '100%');
-            elem.setAttribute('height', '100%');
-            elem.setAttribute('frameBorder','0');
+            elem.setAttribute('class', 'ui-widget-shadow element');
             elem.setAttribute('onload', elemResize());
         }
         else if(type==='iframe')
@@ -75,10 +57,7 @@ function changeData(type, ratio, path){
             elem=document.createElement('iframe');
             elem.setAttribute('src',path);
             contentData.appendChild(elem);
-            elem.setAttribute('class', 'ui-widget-shadow');
-            elem.setAttribute('width','100%');
-            elem.setAttribute('height','100%');
-            elem.setAttribute('frameBorder','0');
+            elem.setAttribute('class', 'ui-widget-shadow element');
             elem.setAttribute('onload', elemResize());
         }
         else if(type==='swf')
@@ -87,10 +66,7 @@ function changeData(type, ratio, path){
             elem.setAttribute('pluginspage','http://www.macromedia.com/go/getflashplayer');
             elem.setAttribute('src',path);
             contentData.appendChild(elem);
-            elem.setAttribute('class', 'ui-widget-shadow');
-            elem.setAttribute('width','100%');
-            elem.setAttribute('height','100%');
-            elem.setAttribute('frameBorder','0');
+            elem.setAttribute('class', 'ui-widget-shadow element');
             elem.setAttribute('onload', elemResize());
         }
     }

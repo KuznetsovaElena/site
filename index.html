@@ -5,9 +5,11 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
         <link rel="stylesheet" href="jquery-ui.css">
+        <link rel="stylesheet" href="menuAccordion.css">
         <link rel="stylesheet" href="layout.css">
         <script type="text/javascript" src="jquery-3.3.1.min.js"></script>
         <script type="text/javascript" src="jquery-ui.js"></script>
+        <script type="text/javascript" src="menuAccordion.js"></script>
         <script type="text/javascript" src="functional.js"></script>
     </head>
     <body class="ui-widget">
@@ -16,8 +18,29 @@
                 <center><h3>Сайт Кузнецовой Елены Васильевны (atomkyz@gmail.com)</h3></center>
             </div>
             <div id="main">
+                <div id='cssmenu'>
+                    <ul>
+                       <li><a href='#' onclick="changeData('iframe','0:0','./content/portfolio/aboutme/index.html');">Портфолио</a></li>
+                       <li class='active has-sub'><a href='#'><span>Учителю</span></a>
+                          <ul>
+                             <li class='has-sub'><a href='#'><span>Рабочие программы</span></a>
+                                <ul>
+                                   <li><a href='#'><span>Sub Product</span></a></li>
+                                   <li class='last'><a href='#'><span>Sub Product</span></a></li>
+                                </ul>
+                             </li>
+                             <li class='has-sub'><a href='#'><span>Уроки</span></a>
+                                <ul>
+                                   <li><a href='#'><span>Sub Product</span></a></li>
+                                   <li class='last'><a href='#'><span>Sub Product</span></a></li>
+                                </ul>
+                             </li>
+                          </ul>
+                       </li>
+                    </ul>
+                </div>
+                <!--
                 <div id="menu">
-<!--                Left Menu-->
                     <button type="button" class="ui-button" onclick="changeData('iframe','0:0','./content/portfolio/aboutme/index.html');">Портфолио</button>
                     <div class="accordion">
                         <h3>Учителю</h3>
@@ -41,6 +64,7 @@
                         </ul>
                     </div>
                 </div>
+                -->
                 <div id="content">
                 </div>
             </div>

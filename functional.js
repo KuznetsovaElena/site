@@ -1,16 +1,17 @@
-$( function() {$( ".tabs" ).tabs({
-    collapsible: true,
-    heightStyle: "fill"
-    });
-});
+//$( function() {$( ".tabs" ).tabs({
+//    collapsible: true,
+//    heightStyle: "fill"
+//    });
+//});
+//
+//$( function() {$( ".accordion" ).accordion({
+//    active: Number.MAX_SAFE_INTEGER,
+//    activeIndex: true,
+//    collapsible: true,
+//    heightStyle: "content"
+//    });
+//});
 
-$( function() {$( ".accordion" ).accordion({
-    active: Number.MAX_SAFE_INTEGER,
-    activeIndex: true,
-    collapsible: true,
-    heightStyle: "content"
-    });
-});
 var elem=null;
 elemRatio=0;
 

@@ -10,9 +10,10 @@ function elemResize()
         {
             var w=$(elem).width();
             var h=$(elem).height();
-       
-            var zoom=w/(h*elemRatio);
-            $(elem).height(h*zoom);
+            var newH=w/elemRatio;
+            
+            var zoom=elemRatio*h/w;
+           // $(elem).height(h*zoom);
             $(elem).width(w*zoom);
         }
         else

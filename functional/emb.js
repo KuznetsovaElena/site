@@ -18,7 +18,7 @@ function elemResize()
             {
                w=h*elemRatio;
                $(elem).width(w);
-               $(elem).marginLeft("auto");
+               $(elem).style["margin"] = "0 auto";
             }
             else
             {

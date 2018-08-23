@@ -8,16 +8,7 @@ function elemResize()
     {
         if(elemIsEmb)
         {
-            var contentData = document.getElementById("content");
-            var ratio = contentData.width()/contentData.height();
-            if(elemRatio<ratio)
-            {
-               $(elem).width($(elem).width()*(elemRatio/ratio));
-            }
-            else if(elemRatio>ratio)
-            {
-                $(elem).height($(elem).height()*(ratio/elemRatio));
-            }
+            $(elem).width($(elem).height()*elemRatio);
         }
         else
         {

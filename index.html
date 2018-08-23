@@ -5,12 +5,13 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
         <link rel="stylesheet" href="jquery-ui.css">
-        <link rel="stylesheet" href="menuAccordion.css">
-        <link rel="stylesheet" href="layout.css">
         <script type="text/javascript" src="jquery-3.3.1.min.js"></script>
         <script type="text/javascript" src="jquery-ui.js"></script>
-        <script type="text/javascript" src="menuAccordion.js"></script>
-        <script type="text/javascript" src="functional.js"></script>
+        <link rel="stylesheet" href="functional/menuAccordion.css">
+        <script type="text/javascript" src="functional/menuAccordion.js"></script>
+        <link rel="stylesheet" href="functional/emb.css"/>
+        <script type="text/javascript" src="functional/emb.js"></script>
+        <link rel="stylesheet" href="layout.css">
     </head>
     <body class="ui-widget">
         <div id="wrapper">
@@ -20,7 +21,9 @@
             <div id="main">
                 <div id='cssmenu'>
                     <ul>
-                       <li><a href='#' onclick="changeData('iframe','0:0',false,'./content/portfolio/aboutme/index.html');">Портфолио</a></li>
+                       <li><a href='#' onclick="changeData('iframe','./content/portfolio/aboutme/index.html','1:10:emb');">ПортфолиоEmb</a></li>
+                       <li><a href='#' onclick="changeData('iframe','./content/portfolio/aboutme/index.html','1:1');">Портфолио</a></li>
+                       <li><a href='#' onclick="changeData('iframe','./content/portfolio/aboutme/index.html');">Портфолио111</a></li>
                        <li class='active has-sub'><a href='#'><span>Учителю</span></a>
                           <ul>
                              <li class='has-sub'><a href='#'><span>Рабочие программы</span></a>

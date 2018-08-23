@@ -1,56 +1,68 @@
 var elem=null;
-elemRatio=0;
-elemWindowResizee=false;
+var elemRatio=0;
+var elemIsEmb=false;
 
 function elemResize()
 {
-    if(elem!==null && elemRatio!==0)
+    if(elem!==null && elemRatio !== 0)
     {
-        if(elemWindowResize)
+        if(elemIsEmb)
         {
-            $(elem).height($(elem).width()/elemRatio)
-        }
-        else
-        {
-        var tmp=$(content);
-        var realRatio=tmp.width()/tmp.height();
-        if(realRatio>1 && elemRatio<1)
-        {
-           $(elem).width($(elem).height()*elemRatio);
-        }
-        else
-        {
-           $(elem).height($(elem).width()/elemRatio);;
-        }
+            var contentData=$(content);
+            var realRatio=contentData.width()/contentData.height();
+            if(realRatio>1 && elemRatio<1)
+            {
+               $(elem).width($(elem).height()*elemRatio);
             }
+            else
+            {
+               $(elem).height($(elem).width()/elemRatio);;
+            }
+        }
+        else
+        {
+            $(elem).height($(elem).width()/elemRatio);
+        }
     }
 }
 
-function changeData(type, ratio, windowResize, path){
+function changeData(type, path, ratio){
     var contentData = document.getElementById("content");
+    
+    elemRatio=0;
+    elemIsEmb=false;
+    
     if(elem!==null)
     {
         contentData.removeChild(elem);
         elem=null;
-        elemRatio=0;
-        elemWindowResize=false;
     }
     if(path===null && type===null){
 
     }
     else{
-        elemWindowResize=windowResize;
-        var ratioW=parseInt(ratio.substring(0, ratio.lastIndexOf(':')));
-        var ratioH=parseInt(ratio.substring(ratio.lastIndexOf(':')+1));
-        if(ratioW === 0 && ratioH === 0)
+        if(typeof ratio !== 'undefined')
         {
-            elemRatio=0;
-            elemWindowResize=false;
+            var indexFirst=ratio.indexOf(':',0);
+            if(-1 !== indexFirst)
+            {
+                var ratioW=parseInt(ratio.substring(0, indexFirst));
+                var ratioH=0;
+                var indexLast=ratio.indexOf(':',indexFirst+1);
+                if(-1 !== indexLast && indexFirst !== indexLast)
+                {
+                    ratioH=parseInt(ratio.substring(indexFirst+1, indexLast));
+                    elemIsEmb=('emb' === (ratio.substring(indexLast+1)));
+                }
+                else
+                    ratioH=parseInt(ratio.substring(indexLast+1));
+                if(ratioW === 0 || ratioH === 0)
+                    elemRatio=0;
+                else
+                    elemRatio=ratioW/ratioH;
+            }
         }
-        else
-        {
-            elemRatio=ratioW/ratioH;            
-        }
+        
         if(type === 'gviewer')
         {
             if ('.' === path.substring(0,1)){
@@ -61,7 +73,7 @@ function changeData(type, ratio, windowResize, path){
             elem=document.createElement('iframe');
             elem.setAttribute('src',"https://docs.google.com/viewer?url="+path+"&embedded=true");
             contentData.appendChild(elem);
-            elem.setAttribute('class', 'ui-widget-shadow element');
+            elem.setAttribute('class', 'ui-widget-shadow embElement');
             elem.setAttribute('width', '100%');
             elem.setAttribute('height', '100%');
             elem.setAttribute('onload', elemResize());
@@ -71,7 +83,7 @@ function changeData(type, ratio, windowResize, path){
             elem=document.createElement('iframe');
             elem.setAttribute('src',path);
             contentData.appendChild(elem);
-            elem.setAttribute('class', 'ui-widget-shadow element');
+            elem.setAttribute('class', 'ui-widget-shadow embElement');
             elem.setAttribute('width', '100%');
             elem.setAttribute('height', '100%');
             elem.setAttribute('onload', elemResize());
@@ -82,7 +94,7 @@ function changeData(type, ratio, windowResize, path){
             elem.setAttribute('pluginspage','http://www.macromedia.com/go/getflashplayer');
             elem.setAttribute('src',path);
             contentData.appendChild(elem);
-            elem.setAttribute('class', 'ui-widget-shadow element');
+            elem.setAttribute('class', 'ui-widget-shadow embElement');
             elem.setAttribute('width', '100%');
             elem.setAttribute('height', '100%');
             elem.setAttribute('onload', elemResize());

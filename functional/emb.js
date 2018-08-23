@@ -8,7 +8,12 @@ function elemResize()
     {
         if(elemIsEmb)
         {
-            $(elem).width($(elem).height()*elemRatio);
+            var w=$(elem).width();
+            var h=$(elem).height();
+       
+            var zoom=w/(h*elemRatio);
+            $(elem).height(h*zoom);
+            $(elem).width(w*zoom);
         }
         else
         {

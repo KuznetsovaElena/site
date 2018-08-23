@@ -9,14 +9,14 @@ function elemResize()
         if(elemIsEmb)
         {
             var contentData = document.getElementById("content");
-            var k = (contentData.width()/contentData.height())/elemRatio;
-            if(k<1)
+            var ratio = contentData.width()/contentData.height();
+            if(elemRatio<ratio)
             {
-               $(elem).width($(elem).width()*k);
+               $(elem).width($(elem).width()*(elemRatio/ratio));
             }
-            else
+            else if(elemRatio>ratio)
             {
-                $(elem).height($(elem).height()/k);
+                $(elem).height($(elem).height()*(ratio/elemRatio));
             }
         }
         else

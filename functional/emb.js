@@ -8,13 +8,16 @@ function elemResize()
     {
         if(elemIsEmb)
         {
-            var w=$(elem).width();
-            var h=$(elem).height();
-            var newH=w/elemRatio;
-            
-            var zoom=h/(w/elemRatio);
-            $(elem).height(100);
-            $(elem).width(w*zoom);
+            var contentData = document.getElementById("content");
+            var k = (contentData.width()/contentData.height())/elemRatio;
+            if(k<1)
+            {
+               $(elem).width($(elem).width()*k);
+            }
+            else
+            {
+                $(elem).height($(elem).height()/k);
+            }
         }
         else
         {

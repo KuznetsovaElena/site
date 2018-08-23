@@ -9,16 +9,15 @@ function elemResize()
         var contentData=$(content);
         var maxW=contentData.width();
         var maxH=contentData.height();
+        var w=$(elem).width();
+        var h=$(elem).height();
         if(elemIsEmb)
         {
-            var w=$(elem).width();
-            var h=$(elem).height();
             var realRatio=maxW/maxH;
             if(realRatio>1 && elemRatio<1)
             {
                w=h*elemRatio;
                $(elem).width(w);
-               $(elem).style["margin"] = "0 auto";
             }
             else
             {

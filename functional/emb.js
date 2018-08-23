@@ -13,7 +13,7 @@ function elemResize()
             var newH=w/elemRatio;
             
             var zoom=elemRatio*h/w;
-           // $(elem).height(h*zoom);
+            $(elem).height(100);
             $(elem).width(w*zoom);
         }
         else

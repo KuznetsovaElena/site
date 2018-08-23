@@ -6,22 +6,28 @@ function elemResize()
 {
     if(elem!==null && elemRatio !== 0)
     {
+        var contentData=$(content);
+        var maxW=contentData.width();
+        var maxH=contentData.height();
         if(elemIsEmb)
         {
-            var contentData=$(content);
-            var realRatio=contentData.width()/contentData.height();
+            var w=$(elem).width();
+            var h=$(elem).height();
+            var realRatio=maxW/maxH;
             if(realRatio>1 && elemRatio<1)
             {
-               $(elem).width($(elem).height()*elemRatio);
+               w=h*elemRatio;
+               $(elem).width(w);
             }
             else
             {
-               $(elem).height($(elem).width()/elemRatio);;
+               h=w/elemRatio;
+               $(elem).height(h);
             }
         }
         else
         {
-            $(elem).height($(elem).width()/elemRatio);
+            $(elem).height(w/elemRatio);
         }
     }
 }

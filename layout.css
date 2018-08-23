@@ -34,6 +34,7 @@ div#main{
     display: flex;
     flex-direction: row;
     margin: 10px 10px 10px 10px;
+     text-align: center;
 }
 
 #menu{

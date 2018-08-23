@@ -3,7 +3,7 @@
     margin: 0;
     padding: 0;
     border: none;
-    margin: 0 auto;
+    margin: auto 0;
     border-left: 2px solid #36aae7;
     border-top: 2px solid #36aae7;
     -webkit-box-sizing: border-box;

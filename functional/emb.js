@@ -4,8 +4,8 @@ var elemIsEmb=false;
 
 function elemResize()
 {
-    if(elem!==null && elemRatio !== 0)
-    {
+
+    
         if(elemIsEmb)
         {
         
@@ -28,7 +28,7 @@ function elemResize()
         {
             $(elem).height($(elem).width()/elemRatio);
         }
-    }
+    
 }
 
 function changeData(type, path, ratio){

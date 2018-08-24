@@ -123,9 +123,10 @@ $(window).resize(function()
 {
   elemResize();
 });
-
+/*
 $(window).on("orientationchange",function()
 {
   elemResize();
   alert("The orientation has changed!");
 });
+*/

@@ -4,45 +4,34 @@ var elemIsEmb=false;
 
 function elemResize()
 {
-    if(elem!==null)
+    if(elem!==null && elemRatio !== 0)
     {
-        var loader=document.getElementById("loader");
-        if($(loader).is(":visible"))
+        if(elemIsEmb)
         {
-            $(loader).hide();
-            document.getElementById("content").appendChild(elem);
-        }
-        if(elemRatio !== 0)
-        {
-            if(elemIsEmb)
+            $(elem).width('100%');
+            $(elem).height('100%');
+            var W=$(elem).width();
+            var H=$(elem).height();
+            if(H*elemRatio>W)
             {
-                $(elem).width('100%');
-                $(elem).height('100%');
-                var W=$(elem).width();
-                var H=$(elem).height();
-                if(H*elemRatio>W)
-                {
-                    $(elem).height(W/elemRatio);
-                }
-                else
-                {
-                    $(elem).width(H*elemRatio);
-                }
+                $(elem).height(W/elemRatio);
             }
             else
             {
-                $(elem).height($(elem).width()/elemRatio);
+                $(elem).width(H*elemRatio);
             }
+        }
+        else
+        {
+            $(elem).height($(elem).width()/elemRatio);
         }
     }
 }
 
 function changeData(type, path, ratio){
     var contentData = document.getElementById("content");
-    
     elemRatio=0;
     elemIsEmb=false;
-    
     if(elem!==null)
     {
         contentData.removeChild(elem);
@@ -52,7 +41,7 @@ function changeData(type, path, ratio){
 
     }
     else{
-        $(document.getElementById("loader")).show();
+//        $(document.getElementById("loader")).hide();
         if(typeof ratio !== 'undefined')
         {
             var indexFirst=ratio.indexOf(':',0);
@@ -74,7 +63,6 @@ function changeData(type, path, ratio){
                     elemRatio=ratioW/ratioH;
             }
         }
-       
         if(type === 'gviewer')
         {
             if ('.' === path.substring(0,1)){
@@ -85,6 +73,7 @@ function changeData(type, path, ratio){
             elem=document.createElement('iframe');
             elem.setAttribute('src',"https://docs.google.com/viewer?url="+path+"&embedded=true");
             elem.setAttribute('class', 'ui-widget-shadow embElement');
+            contentData.appendChild(elem);
             elem.setAttribute('onload', elemResize());
         }
         else if(type==='iframe')
@@ -92,6 +81,7 @@ function changeData(type, path, ratio){
             elem=document.createElement('iframe');
             elem.setAttribute('src',path);
             elem.setAttribute('class', 'ui-widget-shadow embElement');
+            contentData.appendChild(elem);
             elem.setAttribute('onload', elemResize());
         }
         else if(type==='swf')
@@ -100,6 +90,7 @@ function changeData(type, path, ratio){
             elem.setAttribute('pluginspage','http://www.macromedia.com/go/getflashplayer');
             elem.setAttribute('src',path);
             elem.setAttribute('class', 'ui-widget-shadow embElement');
+            contentData.appendChild(elem);
             elem.setAttribute('onload', elemResize());
         }
         else if(type==='mp4')
@@ -113,6 +104,7 @@ function changeData(type, path, ratio){
             elem.setAttribute('class', 'ui-widget-shadow embElement');
             elem.setAttribute('width', '80%');
             elemRatio=0;
+            contentData.appendChild(elem);
             elem.setAttribute('onload', elemResize());
         }
     }

@@ -3,7 +3,7 @@
     margin: 0;
     padding: 0;
     border: none;
-    pointer-events: none;
+/*    pointer-events: none;*/
     display: inline-block;
     border-left: 2px solid #36aae7;
     border-top: 2px solid #36aae7;

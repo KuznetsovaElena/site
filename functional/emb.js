@@ -18,56 +18,26 @@ function elemResize()
             var maxH=contentData.height();
             var W=$(elem).width();
             var H=$(elem).height();
-            if(maxW<maxH)
+          
+            if(W/H !== elemRatio)
             {
-               if(W<H)
-               {
+               var base=Math.min(W,H);
+               
+               
+               
                    if(elemRatio<1)
                    {
-                       //$(elem).width(maxH*elemRatio);
+                       $(elem).width(base*elemRatio);
          
-                       //$(elem).height(maxH);
+                       $(elem).height(base);
                    }
                    else
                    {
-                       //$(elem).width(maxW);
-                       //$(elem).height(maxW/elemRatio);
+                       $(elem).width(base);
+                       $(elem).height(base/elemRatio);
                    }
-               }
-               else
-               {
                }
 
-
-            }
-            else
-            {
-               if(W<H)
-               {
-                   if(elemRatio<1)
-                   {
-                   }
-                   else
-                   {
-                   }
-                           
-               }
-               else
-               {
-                   if(elemRatio<1)
-                   {
-                   }
-                   else
-                   {
-                   }
-               }
-        
-
-            }
-        }
-        else
-        {
-            $(elem).height($(elem).width()/elemRatio);
         }
     }
 }

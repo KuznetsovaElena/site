@@ -8,13 +8,13 @@ function elemResize()
     {
         if(elemIsEmb)
         {
-            //$(elem).width('100%');
-            //$(elem).height('100%');
-            //var W=$(elem).width();
-            //var H=$(elem).height();
-            var contentData = document.getElementById("content");
-            var W=$(contentData).innerWidth();
-            var H=$(contentData).innerHeight();
+            $(elem).width('100%');
+            $(elem).height('100%');
+            var W=$(elem).width();
+            var H=$(elem).height();
+  
+
+
             if(H*elemRatio>W)
             {
                 $(elem).height(W/elemRatio);

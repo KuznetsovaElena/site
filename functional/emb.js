@@ -116,6 +116,20 @@ function changeData(type, path, ratio){
             elem.setAttribute('height', '100%');
             elem.setAttribute('onload', elemResize());
         }
+        else if(type==='mp4')
+        {
+            elem=document.createElement('video');
+            elem.setAttribute("controls", "controls");
+            contentData.appendChild(elem);
+            source=document.createElement('source');
+            source.setAttribute('src',path);
+            source.setAttribute('type','video/mp4');
+            elem.appendChild(source);
+            elem.setAttribute('class', 'ui-widget-shadow embElement');
+            elem.setAttribute('width', '80%');
+            elemRatio=0;
+            elem.setAttribute('onload', elemResize());
+        }
     }
 };
 

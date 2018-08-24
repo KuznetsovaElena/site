@@ -22,6 +22,14 @@ function elemResize()
             {
                if(W<H)
                {
+                   if(elemRatio<1)
+                   {
+                         h=w/elemRatio;
+               $(elem).height(maxH);
+                   }
+                   else
+                   {
+                   }
                }
                else
                {

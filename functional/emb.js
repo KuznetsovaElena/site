@@ -119,7 +119,13 @@ function changeData(type, path, ratio){
     }
 };
 
-$( window ).resize(function()
+$(window).resize(function()
 {
-    elemResize();
+  elemResize();
+});
+
+$(window).on("orientationchange",function()
+{
+  elemResize();
+  alert("The orientation has changed!");
 });

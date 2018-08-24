@@ -1,0 +1,3 @@
+(function(){var loadHandler=window['sl_{942778EE-CCAA-464A-B9EE-D75724E92B94}'];loadHandler&&loadHandler(3, '<div id="spr0_899d3f"><div id="spr1_899d3f" class="kern slide"><img id="img2_899d3f" src="data/img1.png" width="960px" height="720px" alt="" style="left:0px;top:0px;"/></div><div id="spr2_899d3f" class="kern slide"><div id="spr3_899d3f" style="left:-0.417px;top:-0.417px;"><img id="img0_899d3f" src="data/img6.png" width="960" height="720" alt=""/></div><div id="spr4_899d3f" style="left:112.833px;top:201.75px;"><img id="img1_899d3f" src="data/img7.png" width="563.25" height="147" alt="II тур\
+« ЗАНИМАТЕЛЬНАЯ МАТЕМАТИКА»\
+"/></div></div></div>');})();

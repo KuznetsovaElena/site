@@ -73,6 +73,8 @@ function changeData(type, path, ratio){
             elem=document.createElement('iframe');
             elem.setAttribute('src',"https://docs.google.com/viewer?url="+path+"&embedded=true");
             elem.setAttribute('class', 'ui-widget-shadow embElement');
+            elem.setAttribute('width','100%');
+            elem.setAttribute('height','100%');
             contentData.appendChild(elem);
             elem.setAttribute('onload', elemResize());
         }
@@ -81,6 +83,8 @@ function changeData(type, path, ratio){
             elem=document.createElement('iframe');
             elem.setAttribute('src',path);
             elem.setAttribute('class', 'ui-widget-shadow embElement');
+            elem.setAttribute('width','100%');
+            elem.setAttribute('height','100%');
             contentData.appendChild(elem);
             elem.setAttribute('onload', elemResize());
         }
@@ -90,6 +94,8 @@ function changeData(type, path, ratio){
             elem.setAttribute('pluginspage','http://www.macromedia.com/go/getflashplayer');
             elem.setAttribute('src',path);
             elem.setAttribute('class', 'ui-widget-shadow embElement');
+            elem.setAttribute('width','100%');
+            elem.setAttribute('height','100%');
             contentData.appendChild(elem);
             elem.setAttribute('onload', elemResize());
         }

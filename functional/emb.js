@@ -1,35 +1,38 @@
 var elem=null;
 var elemRatio=0;
 var elemIsEmb=false;
-var elemLoader=null;
 
 function elemResize()
 {
-    if(elemLoader!==null)
+    if(elem!==null)
     {
-        document.getElementById("content").removeChild(elemLoader);
-        elemLoader=null;
-    }
-    if(elem!==null && elemRatio !== 0)
-    {
-        if(elemIsEmb)
+        var loader=document.getElementById("loader");
+        if($(loader).is(":visible"))
         {
-            $(elem).width('100%');
-            $(elem).height('100%');
-            var W=$(elem).width();
-            var H=$(elem).height();
-            if(H*elemRatio>W)
+            $(loader).hide();
+            document.getElementById("content").appendChild(elem);
+        }
+        if(elemRatio !== 0)
+        {
+            if(elemIsEmb)
             {
-                $(elem).height(W/elemRatio);
+                $(elem).width('100%');
+                $(elem).height('100%');
+                var W=$(elem).width();
+                var H=$(elem).height();
+                if(H*elemRatio>W)
+                {
+                    $(elem).height(W/elemRatio);
+                }
+                else
+                {
+                    $(elem).width(H*elemRatio);
+                }
             }
             else
             {
-                $(elem).width(H*elemRatio);
+                $(elem).height($(elem).width()/elemRatio);
             }
-        }
-        else
-        {
-            $(elem).height($(elem).width()/elemRatio);
         }
     }
 }
@@ -45,15 +48,11 @@ function changeData(type, path, ratio){
         contentData.removeChild(elem);
         elem=null;
     }
-    if(elemLoader!==null)
-    {
-        contentData.removeChild(elemLoader);
-        elemLoader=null;
-    }
     if(path===null && type===null){
 
     }
     else{
+        $(document.getElementById("loader")).show();
         if(typeof ratio !== 'undefined')
         {
             var indexFirst=ratio.indexOf(':',0);
@@ -75,11 +74,7 @@ function changeData(type, path, ratio){
                     elemRatio=ratioW/ratioH;
             }
         }
-        
-        elemLoader=document.createElement('div');
-        elemLoader.setAttribute('class', 'elemLoader');
-        contentData.appendChild(elemLoader);
-        
+       
         if(type === 'gviewer')
         {
             if ('.' === path.substring(0,1)){
@@ -89,20 +84,14 @@ function changeData(type, path, ratio){
             }
             elem=document.createElement('iframe');
             elem.setAttribute('src',"https://docs.google.com/viewer?url="+path+"&embedded=true");
-            contentData.appendChild(elem);
             elem.setAttribute('class', 'ui-widget-shadow embElement');
-            elem.setAttribute('width', '100%');
-            elem.setAttribute('height', '100%');
             elem.setAttribute('onload', elemResize());
         }
         else if(type==='iframe')
         {
             elem=document.createElement('iframe');
             elem.setAttribute('src',path);
-            contentData.appendChild(elem);
             elem.setAttribute('class', 'ui-widget-shadow embElement');
-            elem.setAttribute('width', '100%');
-            elem.setAttribute('height', '100%');
             elem.setAttribute('onload', elemResize());
         }
         else if(type==='swf')
@@ -110,17 +99,13 @@ function changeData(type, path, ratio){
             elem=document.createElement('embed');
             elem.setAttribute('pluginspage','http://www.macromedia.com/go/getflashplayer');
             elem.setAttribute('src',path);
-            contentData.appendChild(elem);
             elem.setAttribute('class', 'ui-widget-shadow embElement');
-            elem.setAttribute('width', '100%');
-            elem.setAttribute('height', '100%');
             elem.setAttribute('onload', elemResize());
         }
         else if(type==='mp4')
         {
             elem=document.createElement('video');
             elem.setAttribute("controls", "controls");
-            contentData.appendChild(elem);
             source=document.createElement('source');
             source.setAttribute('src',path);
             source.setAttribute('type','video/mp4');

@@ -37,19 +37,32 @@ function elemResize()
                else
                {
                }
-               w=h*elemRatio;
-               $(elem).width(w);
+
+
             }
             else
             {
                if(W<H)
                {
+                   if(elemRatio<1)
+                   {
+                   }
+                   else
+                   {
+                   }
+                           
                }
                else
                {
+                   if(elemRatio<1)
+                   {
+                   }
+                   else
+                   {
+                   }
                }
                h=w/elemRatio;
-               $(elem).height(h);
+
             }
         }
         else

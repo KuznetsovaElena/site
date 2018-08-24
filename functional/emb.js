@@ -12,17 +12,13 @@ function elemResize()
             $(elem).height('100%');
             var W=$(elem).width();
             var H=$(elem).height();
-            var base=Math.min(W,H);
-            var zoom=1;
-            if(elemRatio<1)
+            if(H*elemRatio>W)
             {
-                $(elem).width(zoom*base*elemRatio);
-                $(elem).height(zoom*base);
+                $(elem).height(W/elemRatio);
             }
             else
             {
-                $(elem).width(zoom*base);
-                $(elem).height(zoom*base/elemRatio);
+                $(elem).width(H*elemRatio);
             }
         }
         else

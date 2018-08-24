@@ -16,8 +16,8 @@ function elemResize()
             var contentData=$(content);
             var maxW=contentData.width();
             var maxH=contentData.height();
-            var W=$(elem).width(w);
-            var H=$(elem).height(h);
+            var W=$(elem).width();
+            var H=$(elem).height();
             if(maxW<maxH)
             {
                if(elemRatio<1)

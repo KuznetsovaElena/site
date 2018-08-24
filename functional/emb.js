@@ -26,11 +26,11 @@ function elemResize()
                    {
                        //$(elem).width(maxH*elemRatio);
          
-                       $(elem).height(maxH);
+                       //$(elem).height(maxH);
                    }
                    else
                    {
-                       $(elem).width(maxW);
+                       //$(elem).width(maxW);
                        //$(elem).height(maxW/elemRatio);
                    }
                }
@@ -61,7 +61,7 @@ function elemResize()
                    {
                    }
                }
-               h=w/elemRatio;
+        
 
             }
         }

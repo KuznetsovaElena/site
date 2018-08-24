@@ -4,17 +4,10 @@ var elemIsEmb=false;
 
 function elemResize()
 {
-
-    
-        if(elemIsEmb)
+       if(elemIsEmb)
         {
-        
-           
             var W=$(elem).width();
             var H=$(elem).height();
-  
-
-
             if(H*elemRatio>W)
             {
                 $(elem).height(W/elemRatio);
@@ -28,7 +21,6 @@ function elemResize()
         {
             $(elem).height($(elem).width()/elemRatio);
         }
-    
 }
 
 function changeData(type, path, ratio){
@@ -127,16 +119,7 @@ $(window).resize(function()
         {
             $(elem).width('100%');
             $(elem).height('100%');
-            var W=$(elem).width();
-            var H=$(elem).height();
         }
-  elemResize();
-        }
+        elemResize();
+    }
 });
-/*
-$(window).on("orientationchange",function()
-{
-  elemResize();
-  alert("The orientation has changed!");
-});
-*/

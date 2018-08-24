@@ -8,8 +8,8 @@ function elemResize()
     {
         if(elemIsEmb)
         {
-            $(elem).width('100%');
-            $(elem).height('100%');
+        
+           
             var W=$(elem).width();
             var H=$(elem).height();
   
@@ -121,7 +121,17 @@ function changeData(type, path, ratio){
 
 $(window).resize(function()
 {
+    if(elem!==null && elemRatio !== 0)
+    {
+        if(elemIsEmb)
+        {
+            $(elem).width('100%');
+            $(elem).height('100%');
+            var W=$(elem).width();
+            var H=$(elem).height();
+        }
   elemResize();
+        }
 });
 /*
 $(window).on("orientationchange",function()

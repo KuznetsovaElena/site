@@ -24,11 +24,14 @@ function elemResize()
                {
                    if(elemRatio<1)
                    {
-                         h=w/elemRatio;
-               $(elem).height(maxH);
+                       $(elem).width(maxH*elemRatio);
+         
+                       $(elem).height(maxH);
                    }
                    else
                    {
+                       $(elem).width(maxW);
+                       $(elem).height(maxW/elemRatio);
                    }
                }
                else

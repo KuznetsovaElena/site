@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     border: none;
+    pointer-events: none;
     display: inline-block;
     border-left: 2px solid #36aae7;
     border-top: 2px solid #36aae7;
@@ -10,4 +11,28 @@
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+.elemLoader{
+  margin: 60px auto;
+  border: 16px solid #f3f3f3;
+  border-radius: 10%;
+  border-top: 10px solid #3498db;
+  border-right: 10px solid green;
+  border-bottom: 10px solid #3498db;
+  border-left: 10px solid red;
+  width: 60px;
+  height: 60px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }

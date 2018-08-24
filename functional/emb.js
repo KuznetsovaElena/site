@@ -1,9 +1,15 @@
 var elem=null;
 var elemRatio=0;
 var elemIsEmb=false;
+var elemLoader=null;
 
 function elemResize()
 {
+    if(elemLoader!==null)
+    {
+        document.getElementById("content").removeChild(elemLoader);
+        elemLoader=null;
+    }
     if(elem!==null && elemRatio !== 0)
     {
         if(elemIsEmb)
@@ -39,6 +45,11 @@ function changeData(type, path, ratio){
         contentData.removeChild(elem);
         elem=null;
     }
+    if(elemLoader!==null)
+    {
+        contentData.removeChild(elemLoader);
+        elemLoader=null;
+    }
     if(path===null && type===null){
 
     }
@@ -64,6 +75,10 @@ function changeData(type, path, ratio){
                     elemRatio=ratioW/ratioH;
             }
         }
+        
+        elemLoader=document.createElement('div');
+        elemLoader.setAttribute('class', 'elemLoader');
+        contentData.appendChild(elemLoader);
         
         if(type === 'gviewer')
         {

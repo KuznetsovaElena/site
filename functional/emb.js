@@ -20,7 +20,7 @@ function elemResize()
             var H=$(elem).height();
             if(maxW<maxH)
             {
-               if(elemRatio<1)
+               if(W<H)
                {
                }
                else
@@ -31,7 +31,7 @@ function elemResize()
             }
             else
             {
-               if(elemRatio<1)
+               if(W<H)
                {
                }
                else

@@ -6,38 +6,28 @@ function elemResize()
 {
     if(elem!==null && elemRatio !== 0)
     {
-
-
-
-
-
         if(elemIsEmb)
         {
-            var contentData=$(content);
-            var maxW=contentData.width();
-            var maxH=contentData.height();
+            $(elem).width('100%');
+            $(elem).height('100%');
             var W=$(elem).width();
             var H=$(elem).height();
-          
-            if(W/H !== elemRatio)
+            var base=Math.min(W,H);
+            var zoom=1;
+            if(elemRatio<1)
             {
-               var base=Math.min(W,H);
-               
-               
-               
-                   if(elemRatio<1)
-                   {
-                       $(elem).width(base*elemRatio);
-         
-                       $(elem).height(base);
-                   }
-                   else
-                   {
-                       $(elem).width(base);
-                       $(elem).height(base/elemRatio);
-                   }
-               }
-
+                $(elem).width(zoom*base*elemRatio);
+                $(elem).height(zoom*base);
+            }
+            else
+            {
+                $(elem).width(zoom*base);
+                $(elem).height(zoom*base/elemRatio);
+            }
+        }
+        else
+        {
+            $(elem).height($(elem).width()/elemRatio);
         }
     }
 }

@@ -49,10 +49,3 @@ div#main{
     padding: 0;
     padding-left: 10px;
 }
-
-@media only screen {
-    #content{
-        min-width: 640;
-        min-height: 480;
-    }
-}
